@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Lucas Sigrist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0f172a;
+            /* Slate 900 - Profissional e Moderno */
+            --accent: #2563eb;
+            /* Royal Blue - Destaque Tecnológico */
+            --text-main: #334155;
+            /* Slate 700 */
+            --text-light: #64748b;
+            /* Slate 500 */
+            --bg-sidebar: #f8fafc;
+            /* Slate 50 */
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background: #fff;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 2fr 1.1fr;
+            /* Layout 65% / 35% */
+            gap: 40px;
+        }
+
+        /* --- HEADER --- */
+        header {
+            grid-column: 1 / -1;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 25px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: var(--primary);
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+        }
+
+        .role-title {
+            font-size: 16px;
+            color: var(--accent);
+            font-weight: 600;
+            margin-top: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 15px;
+            font-size: 13px;
+            color: var(--text-main);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .contact-item i {
+            color: var(--accent);
+            font-size: 14px;
+        }
+
+        .contact-item a {
+            color: inherit;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .contact-item a:hover {
+            color: var(--accent);
+        }
+
+        .whatsapp-btn {
+            background-color: #25D366;
+            color: white !important;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-weight: 600;
+            font-size: 12px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .whatsapp-btn i {
+            color: white;
+        }
+
+        /* --- CONTEÚDO PRINCIPAL --- */
+        .section-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 8px;
+            margin: 30px 0 20px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            break-inside: avoid;
+            page-break-inside: avoid;
+            break-after: avoid;
+            page-break-after: avoid;
+        }
+
+        .section-title i {
+            color: var(--accent);
+        }
+
+        .summary {
+            font-size: 14px;
+            color: var(--text-main);
+            text-align: justify;
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+
+        /* Experiência */
+        .job-item {
+            margin-bottom: 25px;
+            position: relative;
+            padding-left: 20px;
+            border-left: 2px solid var(--border);
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+
+        .job-header {
+            margin-bottom: 8px;
+        }
+
+        .job-role {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .job-company {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .job-date {
+            font-size: 12px;
+            color: var(--text-light);
+            font-style: italic;
+            margin-top: 2px;
+        }
+
+        .job-desc ul {
+            list-style: none;
+        }
+
+        .job-desc li {
+            position: relative;
+            padding-left: 15px;
+            margin-bottom: 6px;
+            color: var(--text-main);
+            font-size: 13.5px;
+        }
+
+        .job-desc li::before {
+            content: "•";
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* --- SIDEBAR --- */
+        .sidebar {
+            background: var(--bg-sidebar);
+            padding: 25px;
+            border-radius: 12px;
+            height: fit-content;
+        }
+
+        .skill-group {
+            margin-bottom: 25px;
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+
+        .skill-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background: #fff;
+            border: 1px solid #cbd5e1;
+            color: var(--text-main);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .edu-item {
+            margin-bottom: 15px;
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+
+        .edu-degree {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 13px;
+            display: block;
+        }
+
+        .edu-school {
+            font-size: 12px;
+            color: var(--text-light);
+            display: block;
+        }
+
+        /* --- PRINT --- */
+        @media print {
+            body {
+                margin: 0;
+                background: #fff;
+            }
+
+            .container {
+                padding: 0;
+                margin: 20px;
+                max-width: 100%;
+                box-shadow: none;
+            }
+
+            .sidebar {
+                background-color: #f8fafc !important;
+                -webkit-print-color-adjust: exact;
+            }
+
+            .whatsapp-btn {
+                color: black !important;
+                border: 1px solid #000;
+                background: none !important;
+            }
+
+            .whatsapp-btn i {
+                color: black !important;
+            }
+
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+
+            header {
+                text-align: center;
+            }
+
+            .contact-bar {
+                justify-content: center;
+            }
+
+            .sidebar {
+                order: 2;
+            }
+        }
+
+        .print-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            z-index: 1000;
+            transition: background-color 0.2s;
+        }
+
+        .print-btn:hover {
+            background-color: #1d4ed8;
+        }
+
+        @media print {
+            .print-btn {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <button onclick="window.print()" class="print-btn">
+        <i class="fas fa-file-pdf"></i> Salvar PDF / Imprimir
+    </button>
+
+    <div class="container">
+        <header>
+            <h1>Lucas Sigrist</h1>
+            <div class="role-title">Engenheiro de Automação & Controle | DevSecOps & Cloud Infrastructure</div>
+
+            <div class="contact-bar">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i> Americana – SP
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:sigrist@live.com">sigrist@live.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <a href="https://wa.me/5519996283457" target="_blank" class="whatsapp-btn">
+                        (19) 99628-3457
+                    </a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <a href="https://www.linkedin.com/in/lucas-sigrist-9b3561228/" target="_blank">LinkedIn
+                        Profile</a>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="summary">
+                <p>Engenheiro de Automação e Controle atuando em <strong>DevSecOps e Infraestrutura On-Prem e
+                        Cloud</strong>. Diferencio-me pela aplicação do rigor analítico da engenharia na resolução de
+                    problemas complexos de TI. Sólida experiência em orquestração de ambientes híbridos, migração para
+                    arquiteturas mais modernas e estratégias de observabilidade com foco em eficiência e
+                    redução de custos. Lidero iniciativas de modernização de legado e automação, transformando
+                    desafios técnicos em vantagens operacionais.</p>
+            </div>
+
+            <h2 class="section-title"><i class="fas fa-briefcase"></i> Experiência Profissional</h2>
+
+            <div class="job-item">
+                <div class="job-header">
+                    <div class="job-role">Analista de Infraestrutura / Cloud & DevOps</div>
+                    <div class="job-company">MSDN Tecnologia</div>
+                    <div class="job-date">Fev 2025 – Atual</div>
+                </div>
+                <div class="job-desc">
+                    <ul>
+                        <li><strong>Cloud Engineering:</strong> Arquitetura e sustentação de workloads em AWS
+                            e Azure, garantindo escalabilidade e alta disponibilidade para aplicações críticas.</li>
+                        <li><strong>Containerização:</strong> Administração de ambientes Docker,
+                            otimizando o ciclo de vida de aplicações e reduzindo conflitos de dependências.</li>
+                        <li><strong>Observabilidade:</strong> Desenvolvimento de Check custom Datadog
+                            (Python/API +
+                            SNMP) para monitoramento de SD-WAN Fortinet, fornecendo visibilidade de SLAs e QoS.</li>
+                        <li><strong>Network Security:</strong> Reestruturação de acesso remoto via migração
+                            de SSL VPN para IPsec IKEv2 (XAuth para EAP) e modernização de autenticação (LDAP para
+                            Radius), implementando microsegmentação de rede baseada em identidade.</li>
+                        <li><strong>Automação:</strong> Desenvolvimento de scripts em Shell Script e PowerShell para
+                            eliminar tarefas manuais repetitivas.</li>
+                        <li><strong>Disaster Recovery:</strong> Gestão de estratégias de backup imutável com Veeam
+                            Backup & Replication em ambientes virtualizados (VMware vSphere).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="job-item">
+                <div class="job-header">
+                    <div class="job-role">Analista de Infraestrutura Pleno / DevOps</div>
+                    <div class="job-company">Spivit Global Technologies</div>
+                    <div class="job-date">Jan 2023 – Fev 2025</div>
+                </div>
+                <div class="job-desc">
+                    <ul>
+                        <li><strong>CI/CD Implementation:</strong> Estruturação de pipelines de integração e entrega
+                            contínua, acelerando o time-to-market de novas features.</li>
+                        <li><strong>Gestão de Identidade:</strong> Administração centralizada de Active Directory,
+                            Entra ID e controle de acesso (RBAC) em ambientes híbridos.</li>
+                        <li><strong>Infraestrutura de Rede:</strong> Configuração avançada de Switch Core
+                            (Cisco/Aruba),
+                            VLANs e segmentação de rede.</li>
+                        <li><strong>Automação de TI:</strong> Uso de Datto RMM e Autotask para gestão remota de
+                            ativos, gerenciamento de processos e ITIL.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="job-item">
+                <div class="job-header">
+                    <div class="job-role">Analista de Informática Jr. / Infraestrutura</div>
+                    <div class="job-company">São Lucas Saúde S/A</div>
+                    <div class="job-date">2016 – 2023 (Projetos Intermitentes)</div>
+                </div>
+                <div class="job-desc">
+                    <ul>
+                        <li>Sustentação de servidores Windows e Linux, gerenciamento de rotinas de Backup e
+                            monitoramento de infraestrutura.</li>
+                        <li>Resolução de problemas de suporte técnico nível 2 e manutenção de hardware/software.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </main>
+
+        <aside class="sidebar">
+
+            <div class="skill-group">
+                <div class="skill-title">Tech Stack & Tools</div>
+                <div class="tags">
+                    <span class="tag">AWS / Azure / GCP</span>
+                    <span class="tag">Docker & K8s</span>
+                    <span class="tag">CI/CD Pipelines</span>
+                    <span class="tag">Datadog</span>
+                    <span class="tag">Microsoft 365</span>
+                    <span class="tag">Git / GitHub</span>
+                </div>
+            </div>
+
+            <div class="skill-group">
+                <div class="skill-title">Security & Network</div>
+                <div class="tags">
+                    <span class="tag">FortiGate </span>
+                    <span class="tag">SD-WAN</span>
+                    <span class="tag">Sophos</span>
+                    <span class="tag">VPN</span>
+                    <span class="tag">Zero Trust</span>
+                    <span class="tag">Hardening</span>
+                    <span class="tag">Cisco Switching</span>
+                    <span class="tag">HP Switching</span>
+                    <span class="tag">Aruba</span>
+                    <span class="tag">Veeam Backup</span>
+                </div>
+            </div>
+
+            <div class="skill-group">
+                <div class="skill-title">Automação & OS</div>
+                <div class="tags">
+                    <span class="tag">Python & Shell</span>
+                    <span class="tag">PowerShell</span>
+                    <span class="tag">Windows Server</span>
+                    <span class="tag">WSUS</span>
+                    <span class="tag">Microsoft Hyper-V</span>
+                    <span class="tag">Linux (RHEL/Debian)</span>
+                    <span class="tag">Active Directory</span>
+                </div>
+            </div>
+
+            <div class="skill-group">
+                <div class="skill-title">Soft Skills</div>
+                <div class="tags">
+                    <span class="tag">Troubleshooting</span>
+                    <span class="tag">Pensamento Crítico</span>
+                    <span class="tag">Gestão de Crise</span>
+                    <span class="tag">Trabalho em Equipe</span>
+                    <span class="tag">Adaptabilidade</span>
+                </div>
+            </div>
+
+            <div class="skill-group">
+                <div class="skill-title">Formação</div>
+                <div class="edu-item">
+                    <span class="edu-degree">Engenharia de Automação e Controle</span>
+                    <span class="edu-school">Bacharelado Completo</span>
+                </div>
+                <div class="edu-item">
+                    <span class="edu-degree">Técnico em Redes & Linux</span>
+                    <span class="edu-school">Senac / ETEA</span>
+                </div>
+            </div>
+
+            <div class="skill-group">
+                <div class="skill-title">Idiomas</div>
+                <div class="edu-item">
+                    <span class="edu-degree">Português</span>
+                    <span class="edu-school">Nativo</span>
+                </div>
+                <div class="edu-item">
+                    <span class="edu-degree">Inglês</span>
+                    <span class="edu-school">Técnico (Leitura Avançada)</span>
+                </div>
+            </div>
+
+        </aside>
+    </div>
+
+</body>
+
+</html>
