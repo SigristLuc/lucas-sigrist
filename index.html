@@ -296,6 +296,14 @@
             .no-print {
                 display: none !important;
             }
+
+            .print-btn {
+                display: none;
+            }
+
+            .lang-btn {
+                display: none;
+            }
         }
 
         /* Mobile */
@@ -349,16 +357,6 @@
 
         .lang-btn:hover {
             background-color: var(--primary);
-        }
-
-        @media print {
-            .lang-btn { display: none; }
-        }
-
-        @media print {
-            .print-btn {
-                display: none;
-            }
         }
 
         /* --- LANGUAGE TOGGLE --- */
@@ -586,11 +584,13 @@
             body.classList.add('lang-pt');
             btn.innerHTML = '<i class="fas fa-globe"></i> EN';
             localStorage.setItem('cv-lang', 'pt');
+            document.documentElement.lang = 'pt-BR';
         } else {
             body.classList.remove('lang-pt');
             body.classList.add('lang-en');
             btn.innerHTML = '<i class="fas fa-globe"></i> PT';
             localStorage.setItem('cv-lang', 'en');
+            document.documentElement.lang = 'en';
         }
     }
 
@@ -599,6 +599,7 @@
         const saved = localStorage.getItem('cv-lang') || 'pt';
         document.body.classList.remove('lang-pt', 'lang-en');
         document.body.classList.add('lang-' + saved);
+        document.documentElement.lang = (saved === 'pt') ? 'pt-BR' : 'en';
         const btn = document.getElementById('lang-btn');
         btn.innerHTML = '<i class="fas fa-globe"></i> ' + (saved === 'pt' ? 'EN' : 'PT');
     })();
