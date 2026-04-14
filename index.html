@@ -341,6 +341,20 @@
             background-color: #1d4ed8;
         }
 
+        .lang-btn {
+            top: 20px;
+            right: 165px;
+            background-color: var(--text-light);
+        }
+
+        .lang-btn:hover {
+            background-color: var(--primary);
+        }
+
+        @media print {
+            .lang-btn { display: none; }
+        }
+
         @media print {
             .print-btn {
                 display: none;
@@ -353,11 +367,14 @@
     </style>
 </head>
 
-<body>
+<body class="lang-pt">
 
 
     <button onclick="window.print()" class="print-btn">
         <i class="fas fa-file-pdf"></i> Salvar PDF / Imprimir
+    </button>
+    <button id="lang-btn" class="print-btn lang-btn" onclick="toggleLang()">
+        <i class="fas fa-globe"></i> EN
     </button>
 
     <div class="container">
@@ -559,6 +576,33 @@
         </aside>
     </div>
 
+
+<script>
+    function toggleLang() {
+        const body = document.body;
+        const btn = document.getElementById('lang-btn');
+        if (body.classList.contains('lang-en')) {
+            body.classList.remove('lang-en');
+            body.classList.add('lang-pt');
+            btn.innerHTML = '<i class="fas fa-globe"></i> EN';
+            localStorage.setItem('cv-lang', 'pt');
+        } else {
+            body.classList.remove('lang-pt');
+            body.classList.add('lang-en');
+            btn.innerHTML = '<i class="fas fa-globe"></i> PT';
+            localStorage.setItem('cv-lang', 'en');
+        }
+    }
+
+    // Load saved preference or default to PT
+    (function () {
+        const saved = localStorage.getItem('cv-lang') || 'pt';
+        document.body.classList.remove('lang-pt', 'lang-en');
+        document.body.classList.add('lang-' + saved);
+        const btn = document.getElementById('lang-btn');
+        btn.innerHTML = '<i class="fas fa-globe"></i> ' + (saved === 'pt' ? 'EN' : 'PT');
+    })();
+</script>
 </body>
 
 </html>
