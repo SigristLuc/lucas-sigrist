@@ -12,6 +12,23 @@
     <meta property="og:url" content="https://sigristluc.github.io/lucas-sigrist/">
     <meta property="og:type" content="profile">
     <title>CV Lucas Sigrist - DevOps & Cloud Infrastructure</title>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Lucas Sigrist",
+        "jobTitle": "DevOps & Cloud Infrastructure Analyst",
+        "url": "https://sigristluc.github.io/lucas-sigrist/",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Americana",
+            "addressRegion": "SP",
+            "addressCountry": "BR"
+        },
+        "sameAs": ["https://www.linkedin.com/in/lucassigrist/"],
+        "knowsAbout": ["DevOps", "DevSecOps", "Cloud Infrastructure", "AWS", "Azure", "CI/CD", "Docker", "Observability", "Datadog", "Network Security", "Fortinet SD-WAN"]
+    }
+    </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -594,15 +611,15 @@
             <div class="linkedin-embeds no-print pt"
                 style="display: flex; flex-direction: column; gap: 20px; align-items: center;">
                 <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7450986729219661824?collapsed=1"
-                    height="542" width="504" frameborder="0" allowfullscreen="" title="Publicação incorporada"
+                    height="542" width="504" frameborder="0" loading="lazy" allowfullscreen="" title="Publicação incorporada"
                     style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border);"></iframe>
 
                 <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7423022896664576000?collapsed=1"
-                    height="542" width="504" frameborder="0" allowfullscreen="" title="Publicação incorporada"
+                    height="542" width="504" frameborder="0" loading="lazy" allowfullscreen="" title="Publicação incorporada"
                     style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border);"></iframe>
 
                 <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7402712731847557121?collapsed=1"
-                    height="670" width="504" frameborder="0" allowfullscreen="" title="Publicação incorporada"
+                    height="670" width="504" frameborder="0" loading="lazy" allowfullscreen="" title="Publicação incorporada"
                     style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border);"></iframe>
             </div>
 
@@ -754,9 +771,12 @@
             }
         }
 
-        // Load saved preference or default to PT
+        // Priority: URL param (?lang=en) > saved preference > default PT
         (function () {
-            const saved = localStorage.getItem('cv-lang') || 'pt';
+            const urlLang = new URLSearchParams(window.location.search).get('lang');
+            const saved = (urlLang === 'en' || urlLang === 'pt')
+                ? urlLang
+                : (localStorage.getItem('cv-lang') || 'pt');
             document.body.classList.remove('lang-pt', 'lang-en');
             document.body.classList.add('lang-' + saved);
             document.documentElement.lang = (saved === 'pt') ? 'pt-BR' : 'en';
