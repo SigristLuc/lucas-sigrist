@@ -11,7 +11,13 @@
         content="CI/CD do zero, observabilidade em escala e segurança de rede em ambientes híbridos AWS/Azure. CV bilíngue PT/EN.">
     <meta property="og:url" content="https://sigristluc.github.io/lucas-sigrist/">
     <meta property="og:type" content="profile">
+    <meta property="og:image" content="https://sigristluc.github.io/lucas-sigrist/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
     <title>CV Lucas Sigrist - DevOps & Cloud Infrastructure</title>
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%232563eb'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-size='28' font-weight='700' fill='white' text-anchor='middle'%3ELS%3C/text%3E%3C/svg%3E">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -25,8 +31,8 @@
             "addressRegion": "SP",
             "addressCountry": "BR"
         },
-        "sameAs": ["https://www.linkedin.com/in/lucassigrist/"],
-        "knowsAbout": ["DevOps", "DevSecOps", "Cloud Infrastructure", "AWS", "Azure", "CI/CD", "Docker", "Observability", "Datadog", "Network Security", "Fortinet SD-WAN"]
+        "sameAs": ["https://www.linkedin.com/in/lucassigrist/", "https://github.com/SigristLuc"],
+        "knowsAbout": ["DevOps", "DevSecOps", "Cloud Infrastructure", "AWS", "Azure", "CI/CD", "Terraform", "Infrastructure as Code", "GitHub Actions", "Docker", "Observability", "Datadog", "Network Security", "Fortinet SD-WAN"]
     }
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -431,6 +437,10 @@
                     <a href="https://www.linkedin.com/in/lucassigrist/" target="_blank">LinkedIn
                         Profile</a>
                 </div>
+                <div class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <a href="https://github.com/SigristLuc" target="_blank">GitHub</a>
+                </div>
             </div>
         </header>
 
@@ -440,13 +450,14 @@
                         Cloud e Infraestrutura híbrida</strong>. Construí pipelines de CI/CD do zero que reduziram
                     releases de horas para minutos e desenvolvi observabilidade customizada para ambientes de grande
                     escala, como o monitoramento de SD-WAN de uma rede varejista com mais de 400 filiais. Lidero
-                    modernização, migração de legado e hardening de segurança em AWS, Azure e VMware, com foco em redução
-                    de risco operacional.</p>
+                    modernização, infraestrutura como código com Terraform, migração de legado e hardening de segurança
+                    em AWS, Azure e VMware, com foco em redução de risco operacional.</p>
                 <p class="en">Automation & Control Engineer with 8+ years in IT, focused on <strong>DevOps, Cloud, and
                         hybrid infrastructure</strong>. Built CI/CD pipelines from scratch that cut releases from hours
                     to minutes, and developed custom observability for large-scale environments, including Fortinet
-                    SD-WAN monitoring across a retail network of 400+ sites. I lead modernization, legacy migration, and
-                    security hardening across AWS, Azure, and VMware, with a focus on reducing operational risk.</p>
+                    SD-WAN monitoring across a retail network of 400+ sites. I lead modernization, infrastructure as code with
+                    Terraform, legacy migration, and security hardening across AWS, Azure, and VMware, with a focus on
+                    reducing operational risk.</p>
             </div>
 
             <h2 class="section-title">
@@ -488,6 +499,18 @@
                                 identity-based microsegmentation and reducing attack surface.</span>
                         </li>
                         <li>
+                            <span class="pt"><strong>Infraestrutura como Código:</strong> Implementei provisionamento de
+                                VMs com Terraform no VMware vSphere, com templates padronizados (Rocky Linux/Windows
+                                Server), state isolado por VM e interface self-service, substituindo a criação manual de
+                                máquinas; na AWS, levei recursos para GitOps com GitHub Actions (plan no PR, apply no
+                                merge) e autenticação OIDC, eliminando credenciais estáticas da pipeline.</span>
+                            <span class="en"><strong>Infrastructure as Code:</strong> Implemented VM provisioning with
+                                Terraform on VMware vSphere, using standardized templates (Rocky Linux/Windows Server),
+                                per-VM isolated state, and a self-service interface, replacing manual VM builds; on AWS,
+                                moved resources to a GitOps flow with GitHub Actions (plan on PR, apply on merge) and
+                                OIDC authentication, eliminating static credentials from the pipeline.</span>
+                        </li>
+                        <li>
                             <span class="pt"><strong>Cloud Engineering:</strong> Arquitetei e sustentei workloads em AWS
                                 e Azure, garantindo escalabilidade e alta disponibilidade para aplicações críticas de
                                 clientes corporativos.</span>
@@ -504,11 +527,16 @@
                                 conflicts.</span>
                         </li>
                         <li>
-                            <span class="pt"><strong>Automação:</strong> Desenvolvi scripts Shell e PowerShell para
-                                eliminar rotinas manuais repetitivas, liberando capacidade da equipe para tarefas de
-                                maior valor.</span>
-                            <span class="en"><strong>Automation:</strong> Developed Shell and PowerShell scripts to
-                                eliminate repetitive manual routines, freeing team capacity for higher-value work.</span>
+                            <span class="pt"><strong>Automação Linux:</strong> Automatizei rotinas operacionais em
+                                Shell, como a coleta agendada de logs PostgreSQL de múltiplos servidores de banco
+                                (rsync/SSH) com análise via pgBadger, dando visibilidade contínua de performance dos
+                                bancos, e o preparo padronizado de VMs Linux, incluindo transferência segura de arquivos
+                                em sessões de acesso remoto restrito.</span>
+                            <span class="en"><strong>Linux Automation:</strong> Automated operational routines in Shell,
+                                including scheduled PostgreSQL log collection from multiple database servers (rsync/SSH)
+                                with pgBadger analysis for continuous database performance visibility, and standardized
+                                Linux VM preparation, including secure file transfer for restricted remote-access
+                                sessions.</span>
                         </li>
                         <li>
                             <span class="pt"><strong>Disaster Recovery:</strong> Gerenciei estratégia de backup imutável
@@ -581,7 +609,7 @@
                 <div class="job-header">
                     <div class="job-role">
                         <span class="pt">Analista de Informática Jr. / Infraestrutura</span>
-                        <span class="en">IT Analyst Jr. / Infrastructure</span>
+                        <span class="en">Junior IT Analyst / Infrastructure</span>
                     </div>
                     <div class="job-company">São Lucas Saúde S/A</div>
                     <div class="job-date">
@@ -603,12 +631,13 @@
                 </div>
             </div>
 
-            <h2 class="section-title no-print pt">
+            <h2 class="section-title no-print">
                 <i class="fab fa-linkedin"></i>
-                Projetos em Destaque (LinkedIn)
+                <span class="pt">Projetos em Destaque (LinkedIn)</span>
+                <span class="en">Featured Projects (LinkedIn)</span>
             </h2>
 
-            <div class="linkedin-embeds no-print pt"
+            <div class="linkedin-embeds no-print"
                 style="display: flex; flex-direction: column; gap: 20px; align-items: center;">
                 <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7479916383724658688?collapsed=1"
                     height="495" width="504" frameborder="0" loading="lazy" allowfullscreen="" title="Publicação incorporada"
@@ -635,12 +664,14 @@
                 <div class="skill-title">Tech Stack & Tools</div>
                 <div class="tags">
                     <span class="tag">AWS / Azure</span>
+                    <span class="tag">Terraform</span>
                     <span class="tag">Docker</span>
                     <span class="tag">CI/CD Pipelines</span>
+                    <span class="tag">GitHub Actions</span>
                     <span class="tag">Azure DevOps</span>
                     <span class="tag">Datadog</span>
-                    <span class="tag">Microsoft 365</span>
                     <span class="tag">Git / GitHub</span>
+                    <span class="tag">Microsoft 365</span>
                 </div>
             </div>
 
@@ -683,9 +714,7 @@
                 </div>
                 <div class="tags">
                     <span class="tag">Kubernetes</span>
-                    <span class="tag">Terraform</span>
                     <span class="tag">Ansible</span>
-                    <span class="tag">GitHub Actions</span>
                 </div>
             </div>
 
