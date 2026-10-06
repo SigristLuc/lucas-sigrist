@@ -389,6 +389,141 @@
             background-color: var(--primary);
         }
 
+        /* --- PRINT COMPACTO (vem depois do mobile para vencer o breakpoint de 768px no A4) --- */
+        @page {
+            size: A4;
+            margin: 10mm 9mm;
+        }
+
+        @media print {
+            body {
+                font-size: 11.5px;
+                line-height: 1.42;
+            }
+
+            .container {
+                grid-template-columns: 2.1fr 1fr;
+                gap: 18px;
+                margin: 0;
+                padding: 0;
+            }
+
+            header {
+                padding-bottom: 10px;
+                margin-bottom: 0;
+                text-align: left;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .role-title {
+                font-size: 11.5px;
+                margin-top: 2px;
+            }
+
+            .contact-bar {
+                gap: 6px 14px;
+                margin-top: 8px;
+                font-size: 10.5px;
+                justify-content: flex-start;
+            }
+
+            .contact-item i {
+                font-size: 11px;
+            }
+
+            .whatsapp-btn {
+                padding: 0;
+                border: none;
+                font-size: 10.5px;
+                font-weight: 500;
+            }
+
+            .summary {
+                font-size: 11.5px;
+                text-align: left;
+            }
+
+            .section-title {
+                font-size: 12px;
+                padding-bottom: 4px;
+                margin: 16px 0 10px 0;
+            }
+
+            .job-item {
+                margin-bottom: 12px;
+                padding-left: 12px;
+                break-inside: auto;
+                page-break-inside: auto;
+            }
+
+            .job-header {
+                margin-bottom: 4px;
+                break-inside: avoid;
+                page-break-inside: avoid;
+                break-after: avoid;
+                page-break-after: avoid;
+            }
+
+            .job-role {
+                font-size: 12.5px;
+            }
+
+            .job-company {
+                font-size: 11px;
+            }
+
+            .job-date {
+                font-size: 10px;
+            }
+
+            .job-desc li {
+                font-size: 11.2px;
+                margin-bottom: 4px;
+                padding-left: 11px;
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+
+            .sidebar {
+                padding: 14px;
+                border-radius: 8px;
+            }
+
+            .skill-group {
+                margin-bottom: 14px;
+            }
+
+            .skill-title {
+                font-size: 10.5px;
+                margin-bottom: 6px;
+            }
+
+            .tags {
+                gap: 4px;
+            }
+
+            .tag {
+                padding: 2px 6px;
+                font-size: 10px;
+                border-radius: 4px;
+            }
+
+            .edu-item {
+                margin-bottom: 8px;
+            }
+
+            .edu-degree {
+                font-size: 10.5px;
+            }
+
+            .edu-school {
+                font-size: 10px;
+            }
+        }
+
         /* --- LANGUAGE TOGGLE --- */
         body.lang-pt .en {
             display: none !important;
@@ -496,6 +631,14 @@
                             <span class="en"><strong>Network Security:</strong> Migrated remote access from SSL VPN to
                                 IPsec IKEv2 (XAuth → EAP) and authentication from LDAP to Radius, implementing
                                 identity-based microsegmentation and reducing attack surface.</span>
+                        </li>
+                        <li>
+                            <span class="pt"><strong>Segurança Operacional:</strong> Centralizei no FortiAnalyzer os logs dos FortiGates das mais de 400 filiais, com relatórios, alertas e política de retenção para compliance, e conduzo a investigação de incidentes a partir dessa base.</span>
+                            <span class="en"><strong>Security Operations:</strong> Centralized FortiGate logs from 400+ branch sites in FortiAnalyzer, with reports, alerts, and a compliance-driven retention policy, and I lead incident investigations from that data.</span>
+                        </li>
+                        <li>
+                            <span class="pt"><strong>Threat Intelligence:</strong> Sou responsável pelo monitoramento de ameaças externas com FortiRecon (superfície de ataque exposta, vazamento de credenciais, dark web e uso indevido da marca) e pelo tratamento ponta a ponta do que é encontrado, da correção de exposições à execução de takedowns de conteúdo fraudulento.</span>
+                            <span class="en"><strong>Threat Intelligence:</strong> I own external threat monitoring with FortiRecon (exposed attack surface, credential leaks, dark web, and brand abuse) and end-to-end remediation of findings, from fixing exposures to executing takedowns of fraudulent content.</span>
                         </li>
                         <li>
                             <span class="pt"><strong>Infraestrutura como Código:</strong> Implementei provisionamento de
@@ -736,6 +879,8 @@
                 <div class="skill-title">Security & Network</div>
                 <div class="tags">
                     <span class="tag">FortiGate</span>
+                    <span class="tag">FortiAnalyzer</span>
+                    <span class="tag">FortiRecon</span>
                     <span class="tag">SD-WAN</span>
                     <span class="tag">Sophos</span>
                     <span class="tag">VPN</span>
