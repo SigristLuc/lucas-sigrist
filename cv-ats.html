@@ -181,12 +181,12 @@
                 do zero que reduziram releases de horas para minutos, migrei o acesso remoto para IPsec IKEv2 com
                 microsegmentação por identidade e desenvolvi observabilidade customizada para o monitoramento de
                 SD-WAN de uma rede varejista com mais de 400 filiais. Lidero modernização, infraestrutura como
-                código com Terraform e migração de legado, com foco em redução de risco operacional.</p>
+                código com Terraform e migração de legado, com foco em redução de risco operacional. Meu diferencial é integrar sistemas que não conversam entre si (equipamentos sem API, ferramentas de fabricantes diferentes, processos manuais) e transformá-los em ferramentas internas em produção, usando IA como acelerador de engenharia.</p>
             <p class="summary en">Automation & Control Engineer with 8+ years in IT, working across Infrastructure (cloud and on-premises), DevOps, and Network Security in hybrid environments (AWS, Azure, and VMware). Built CI/CD pipelines from scratch
                 that cut releases from hours to minutes, migrated remote access to IPsec IKEv2 with identity-based
                 microsegmentation, and developed custom observability for Fortinet SD-WAN monitoring across a retail
                 network of 400+ sites. I lead modernization, infrastructure as code with Terraform, and legacy
-                migration, with a focus on reducing operational risk.</p>
+                migration, with a focus on reducing operational risk. My edge is integrating systems that don't talk to each other (devices with no API, multi-vendor tools, manual processes) and turning them into in-house tools running in production, using AI as an engineering accelerator.</p>
         </section>
 
         <section>
@@ -360,6 +360,40 @@
 
         <section>
             <h2 class="section-title">
+                <span class="pt">Integração de Sistemas & Ferramentas Próprias</span>
+                <span class="en">Systems Integration & In-House Tools</span>
+            </h2>
+
+            <div class="job-item">
+                <div class="job-desc">
+                    <ul>
+                        <li>
+                            <span class="pt"><strong>Observabilidade de Rede:</strong> Desenvolvi do zero uma plataforma própria de monitoramento, em produção, que unifica em um único painel switches, firewalls e Wi-Fi de cinco fabricantes (Cisco, Aruba, HPE, Huawei e Fortinet), inclusive equipamentos sem API, via SNMP, syslog e traps. Poller assíncrono em Python, FastAPI, PostgreSQL + TimescaleDB e Next.js, com alertas em tempo real (deduplicação e histerese); só no site principal são mais de 1.500 portas e picos de 72 Gbps de tráfego agregado.</span>
+                            <span class="en"><strong>Network Observability:</strong> Built an in-house monitoring platform from scratch, now in production, that brings switches, firewalls, and Wi-Fi from five vendors (Cisco, Aruba, HPE, Huawei, and Fortinet) into a single pane of glass, including devices with no API, via SNMP, syslog, and traps. Async Python poller, FastAPI, PostgreSQL + TimescaleDB, and Next.js, with real-time alerting (deduplication and hysteresis); the main site alone has 1,500+ ports and peaks of 72 Gbps of aggregate traffic.</span>
+                        </li>
+                        <li>
+                            <span class="pt"><strong>Integração de Sistemas:</strong> Integrei sete fontes sem integração nativa entre si (Cloudflare, Nginx Proxy Manager, MikroTik, DNS interno, IIS remoto, entre outras) em um inventário único de APIs e serviços publicados, com coletores somente leitura em Python e PowerShell e credenciais em cofre cifrado, centralizando a visibilidade do que está exposto.</span>
+                            <span class="en"><strong>Systems Integration:</strong> Integrated seven sources with no native integration between them (Cloudflare, Nginx Proxy Manager, MikroTik, internal DNS, remote IIS, and others) into a single inventory of published APIs and services, using read-only Python and PowerShell collectors and an encrypted credential vault, centralizing visibility of what is exposed.</span>
+                        </li>
+                        <li>
+                            <span class="pt"><strong>Gestão de Mudanças (ITIL):</strong> Construí um sistema de GMUD em uso na operação, com aprovação por e-mail para aprovadores internos e externos, execução guiada por checklist com registro de quem executou cada etapa e quando, e notificações assíncronas (NestJS, Next.js, PostgreSQL, Redis/BullMQ, Docker).</span>
+                            <span class="en"><strong>Change Management (ITIL):</strong> Built a change management system used in day-to-day operations, with email-based approval for internal and external approvers, checklist-driven execution that records who completed each step and when, and asynchronous notifications (NestJS, Next.js, PostgreSQL, Redis/BullMQ, Docker).</span>
+                        </li>
+                        <li>
+                            <span class="pt"><strong>Backup de Firewalls:</strong> Automatizei o backup agendado das configurações dos FortiGates via API REST, com coleta de event logs com retenção, health check (HA, licenças) e notificação por e-mail, garantindo um ponto de restauração recente de cada firewall.</span>
+                            <span class="en"><strong>Firewall Backup:</strong> Automated scheduled FortiGate configuration backups via REST API, with event log collection and retention, health checks (HA, licensing), and email notifications, ensuring a recent restore point for every firewall.</span>
+                        </li>
+                        <li>
+                            <span class="pt"><strong>IA Aplicada:</strong> Uso IA generativa como acelerador de engenharia: as ferramentas acima foram construídas com plano de implementação, testes automatizados e CI. Também criei agentes e automações próprias que conectam a IA aos processos internos, como o planejamento e cadastro de projetos no padrão do sistema de gestão, eliminando trabalho manual repetitivo.</span>
+                            <span class="en"><strong>Applied AI:</strong> I use generative AI as an engineering accelerator: the tools above were built with implementation plans, automated tests, and CI. I also built custom AI agents and automations that connect AI to internal processes, such as planning and registering projects in the management system's format, eliminating repetitive manual work.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">
                 <span class="pt">Competências Técnicas</span>
                 <span class="en">Technical Skills</span>
             </h2>
@@ -386,6 +420,15 @@
                 </div>
                 <p>Python, Shell, PowerShell, Windows Server, WSUS, Microsoft Hyper-V, Linux (RHEL/Debian), Active
                     Directory</p>
+            </div>
+
+            <div class="skill-group">
+                <div class="skill-title">
+                    <span class="pt">Integração & Ferramentas</span>
+                    <span class="en">Integration & Tooling</span>
+                </div>
+                <p>Platform Engineering, <span class="pt">IA Aplicada</span><span class="en">Applied AI</span>, FastAPI, Next.js, NestJS, PostgreSQL / TimescaleDB,
+                    SNMP / Syslog, REST APIs</p>
             </div>
 
             <div class="skill-group">
