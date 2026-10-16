@@ -160,8 +160,8 @@
         <header>
             <h1>Lucas Sigrist</h1>
             <div class="role-title">
-                <span class="pt">Engenheiro de Automação & Controle | Infraestrutura Cloud & On-Premises, DevSecOps, Redes e Automação com IA</span>
-                <span class="en">Automation & Control Engineer | Cloud & On-Premises Infrastructure, DevSecOps, Networking & AI-Driven Automation</span>
+                <span class="pt">Engenheiro de Automação & Controle | DevSecOps & Cloud | Infra Híbrida | AI Integration | Automação & Observabilidade</span>
+                <span class="en">Automation & Control Engineer | DevSecOps & Cloud | Hybrid Infrastructure | AI Integration | Automation & Observability</span>
             </div>
             <div class="contact-bar">
                 <p>Americana – SP, Brasil</p>
@@ -373,28 +373,125 @@
             </h2>
 
             <div class="job-item">
+
+                <div class="job-header">
+
+                    <div class="job-role">
+                        <span class="pt">Plataforma de Observabilidade de Rede e Virtualização</span>
+                        <span class="en">Network & Virtualization Observability Platform</span>
+                    </div>
+
+                    <div class="job-company">
+                        <span class="pt">Em produção · Python, FastAPI, PostgreSQL/TimescaleDB, Next.js, Docker</span>
+                        <span class="en">In production · Python, FastAPI, PostgreSQL/TimescaleDB, Next.js, Docker</span>
+                    </div>
+
+                    <div class="job-date">
+                        <span class="pt">Jul 2026 – Atual (evolução contínua)</span>
+                        <span class="en">Jul 2026 – Present (ongoing)</span>
+                    </div>
+
+                </div>
+
                 <div class="job-desc">
                     <ul>
+
                         <li>
-                            <span class="pt"><strong>Observabilidade de Rede:</strong> Desenvolvi do zero uma plataforma própria de monitoramento, em produção, que unifica em um único painel switches, firewalls e Wi-Fi de cinco fabricantes (Cisco, Aruba, HPE, Huawei e Fortinet), inclusive equipamentos sem API, via SNMP, syslog e traps. Poller assíncrono em Python, FastAPI, PostgreSQL + TimescaleDB e Next.js, com alertas em tempo real (deduplicação e histerese); só no site principal são mais de 1.500 portas e picos de 72 Gbps de tráfego agregado. Cada push e PR passa por pipeline no GitHub Actions com testes automatizados (pytest) do motor de alertas, do parser de syslog e do cálculo de tráfego, além de type-check e build do frontend e validação do Docker Compose.</span>
-                            <span class="en"><strong>Network Observability:</strong> Built an in-house monitoring platform from scratch, now in production, that brings switches, firewalls, and Wi-Fi from five vendors (Cisco, Aruba, HPE, Huawei, and Fortinet) into a single pane of glass, including devices with no API, via SNMP, syslog, and traps. Async Python poller, FastAPI, PostgreSQL + TimescaleDB, and Next.js, with real-time alerting (deduplication and hysteresis); the main site alone has 1,500+ ports and peaks of 72 Gbps of aggregate traffic. Every push and PR runs through a GitHub Actions pipeline with automated tests (pytest) for the alert engine, syslog parser, and traffic-rate calculation, plus frontend type-checking and build, and Docker Compose validation.</span>
+                            <span class="pt"><strong>Integração:</strong> Plataforma própria, criada do zero, que reúne em uma tela o que ficava em consoles separados: switches de cinco fabricantes, inclusive sem API, FortiGate via SNMP e API REST (VPN, SLA de SD-WAN com nota de voz MOS, usuários FSSO), Wi-Fi UniFi e logs do FortiAnalyzer. Só no site principal: 1.500+ portas e picos de 72 Gbps.</span>
+                            <span class="en"><strong>Integration:</strong> In-house platform built from scratch that brings into one pane what lived in separate consoles: switches from five vendors, including ones with no API, FortiGate via SNMP and REST API (VPN, SD-WAN SLA with MOS voice score, FSSO users), UniFi Wi-Fi, and FortiAnalyzer logs. Main site alone: 1,500+ ports and 72 Gbps peaks.</span>
                         </li>
+
                         <li>
-                            <span class="pt"><strong>Integração de Sistemas:</strong> Integrei sete fontes sem integração nativa entre si (Cloudflare, Nginx Proxy Manager, MikroTik, DNS interno, IIS remoto, entre outras) em um inventário único de APIs e serviços publicados, com coletores somente leitura em Python e PowerShell e credenciais em cofre cifrado, centralizando a visibilidade do que está exposto.</span>
-                            <span class="en"><strong>Systems Integration:</strong> Integrated seven sources with no native integration between them (Cloudflare, Nginx Proxy Manager, MikroTik, internal DNS, remote IIS, and others) into a single inventory of published APIs and services, using read-only Python and PowerShell collectors and an encrypted credential vault, centralizing visibility of what is exposed.</span>
+                            <span class="pt"><strong>Operação:</strong> Topologia LLDP, VLAN por porta, rastreio de Wi-Fi por dispositivo, tempo real via WebSocket e relatório executivo semanal. O freio no motor de alertas agrupa eventos repetidos: de ~68 mil registros/dia, só ~212 viram notificação no Telegram.</span>
+                            <span class="en"><strong>Operations:</strong> LLDP topology, per-port VLANs, per-device Wi-Fi tracking, real-time WebSocket updates, and a weekly executive report. An alert-engine throttle collapses repeated events: of ~68K records/day, only ~212 become Telegram notifications.</span>
                         </li>
+
                         <li>
-                            <span class="pt"><strong>Gestão de Mudanças (ITIL):</strong> Construí um sistema de GMUD em uso na operação, com aprovação por e-mail para aprovadores internos e externos, execução guiada por checklist com registro de quem executou cada etapa e quando, e notificações assíncronas (NestJS, Next.js, PostgreSQL, Redis/BullMQ, Docker).</span>
-                            <span class="en"><strong>Change Management (ITIL):</strong> Built a change management system used in day-to-day operations, with email-based approval for internal and external approvers, checklist-driven execution that records who completed each step and when, and asynchronous notifications (NestJS, Next.js, PostgreSQL, Redis/BullMQ, Docker).</span>
+                            <span class="pt"><strong>Virtualização:</strong> Dashboard NOC do vCenter (pyVmomi, somente leitura), em transição para módulo da plataforma: 6 hosts ESXi, 114 VMs e ~110 TiB, com reserva N+1, previsão de esgotamento de datastore por regressão linear, simulador de manutenção, CPU Ready por VM e hardening com alerta de VMSA explorada.</span>
+                            <span class="en"><strong>Virtualization:</strong> vCenter NOC dashboard (pyVmomi, read-only), now becoming a platform module: 6 ESXi hosts, 114 VMs, and ~110 TiB, with N+1 headroom, datastore exhaustion forecasting via linear regression, a maintenance simulator, per-VM CPU Ready, and hardening checks flagging exploited VMSAs.</span>
                         </li>
+
                         <li>
-                            <span class="pt"><strong>Backup de Firewalls:</strong> Automatizei o backup agendado das configurações dos FortiGates via API REST, com coleta de event logs com retenção, health check (HA, licenças) e notificação por e-mail, garantindo um ponto de restauração recente de cada firewall.</span>
-                            <span class="en"><strong>Firewall Backup:</strong> Automated scheduled FortiGate configuration backups via REST API, with event log collection and retention, health checks (HA, licensing), and email notifications, ensuring a recent restore point for every firewall.</span>
+                            <span class="pt"><strong>Entrega:</strong> 260+ commits, CI no GitHub Actions (pytest, Vitest, type-check, build) e deploy automático a cada push na main.</span>
+                            <span class="en"><strong>Delivery:</strong> 260+ commits, GitHub Actions CI (pytest, Vitest, type-check, build), and automatic deployment on every push to main.</span>
                         </li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="job-item">
+
+                <div class="job-header">
+
+                    <div class="job-role">
+                        <span class="pt">Terminal de Operações com IA (macOS)</span>
+                        <span class="en">AI-Powered Operations Terminal (macOS)</span>
+                    </div>
+
+                    <div class="job-company">
+                        <span class="pt">Projeto pessoal em desenvolvimento · Swift/SwiftUI, Claude e OpenAI</span>
+                        <span class="en">Personal project in development · Swift/SwiftUI, Claude & OpenAI</span>
+                    </div>
+
+                    <div class="job-date">
+                        <span class="pt">Out 2026 – Atual</span>
+                        <span class="en">Oct 2026 – Present</span>
+                    </div>
+
+                </div>
+
+                <div class="job-desc">
+                    <ul>
+
                         <li>
-                            <span class="pt"><strong>IA Aplicada:</strong> Uso IA generativa como acelerador de engenharia: as ferramentas acima foram construídas com plano de implementação, testes automatizados e CI. Também criei agentes e automações próprias que conectam a IA aos processos internos, como o planejamento e cadastro de projetos no padrão do sistema de gestão, eliminando trabalho manual repetitivo.</span>
-                            <span class="en"><strong>Applied AI:</strong> I use generative AI as an engineering accelerator: the tools above were built with implementation plans, automated tests, and CI. I also built custom AI agents and automations that connect AI to internal processes, such as planning and registering projects in the management system's format, eliminating repetitive manual work.</span>
+                            <span class="pt"><strong>Copiloto:</strong> Terminal nativo com copiloto de IA que gera, explica e executa comandos (Linux, FortiOS, PowerShell, AWS/Azure/GCP, kubectl, Terraform), com runbooks e execução em lote em vários hosts com comparação das saídas.</span>
+                            <span class="en"><strong>Copilot:</strong> Native terminal with an AI copilot that generates, explains, and runs commands (Linux, FortiOS, PowerShell, AWS/Azure/GCP, kubectl, Terraform), with runbooks and multi-host batch execution with output comparison.</span>
                         </li>
+
+                        <li>
+                            <span class="pt"><strong>Segurança da IA:</strong> A IA propõe e um motor de políticas decide: risco por tecnologia e ambiente, aprovação com Touch ID, segredos mascarados antes de chegar ao modelo e auditoria encadeada com HMAC-SHA256.</span>
+                            <span class="en"><strong>AI Guardrails:</strong> The AI proposes and a policy engine decides: risk by technology and environment, Touch ID approval, secrets redacted before reaching the model, and an HMAC-SHA256 chained audit trail.</span>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="job-item">
+
+                <div class="job-header">
+
+                    <div class="job-role">
+                        <span class="pt">Outras Ferramentas em Produção</span>
+                        <span class="en">Other Tools in Production</span>
+                    </div>
+
+                </div>
+
+                <div class="job-desc">
+                    <ul>
+
+                        <li>
+                            <span class="pt"><strong>Inventário de Serviços:</strong> Sete fontes sem integração nativa (Cloudflare, Nginx Proxy Manager, MikroTik, DNS interno, IIS e outras) em um inventário único de APIs publicadas, com coletores somente leitura e cofre cifrado.</span>
+                            <span class="en"><strong>Service Inventory:</strong> Seven sources with no native integration (Cloudflare, Nginx Proxy Manager, MikroTik, internal DNS, IIS, and others) in a single inventory of published APIs, with read-only collectors and an encrypted vault.</span>
+                        </li>
+
+                        <li>
+                            <span class="pt"><strong>Gestão de Mudanças (ITIL):</strong> GMUD com aprovação por e-mail (internos e externos) e execução por checklist que registra quem fez cada etapa (NestJS, Next.js, Redis/BullMQ).</span>
+                            <span class="en"><strong>Change Management (ITIL):</strong> Change management with email approval (internal and external) and checklist execution that records who did each step (NestJS, Next.js, Redis/BullMQ).</span>
+                        </li>
+
+                        <li>
+                            <span class="pt"><strong>Backup de Firewalls:</strong> Backup agendado dos FortiGates via API REST, com event logs, health check (HA, licenças) e aviso por e-mail.</span>
+                            <span class="en"><strong>Firewall Backup:</strong> Scheduled FortiGate backups via REST API, with event logs, health checks (HA, licensing), and email alerts.</span>
+                        </li>
+
+                        <li>
+                            <span class="pt"><strong>IA Aplicada:</strong> IA generativa como acelerador de engenharia, sempre com plano, testes e CI, e agentes próprios que ligam a IA aos processos internos, como o cadastro de projetos no sistema de gestão.</span>
+                            <span class="en"><strong>Applied AI:</strong> Generative AI as an engineering accelerator, always backed by plans, tests, and CI, plus custom agents that connect AI to internal processes, such as registering projects in the management system.</span>
+                        </li>
+
                     </ul>
                 </div>
             </div>
