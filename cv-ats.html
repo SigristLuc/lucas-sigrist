@@ -5,7 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex">
-    <title>CV Lucas Sigrist - Infraestrutura Cloud & On-Prem (versão ATS)</title>
+    <title>Lucas Sigrist - Analista de Infraestrutura</title>
+    <!--
+        CV de candidatura (ATS): uma coluna, sem ícones, sem tabelas, máximo 2 páginas.
+        Título conforme a vaga: ?vaga=infra (padrão), ?vaga=redes ou ?vaga=devops. Idioma: ?lang=en.
+        Ao imprimir, desmarque "Cabeçalhos e rodapés" para não sair URL, data e número de página.
+    -->
     <style>
         * {
             margin: 0;
@@ -18,7 +23,7 @@
             color: #111;
             background: #fff;
             font-size: 14px;
-            line-height: 1.5;
+            line-height: 1.45;
         }
 
         .container {
@@ -34,82 +39,68 @@
 
         .role-title {
             font-size: 15px;
-            font-weight: 600;
-            margin-top: 4px;
+            font-weight: 700;
+            margin-top: 2px;
         }
 
-        .contact-bar p {
-            margin-top: 10px;
+        .contact {
+            margin-top: 6px;
             font-size: 13px;
         }
 
-        .contact-bar a {
+        .contact a {
             color: inherit;
+            text-decoration: none;
         }
 
-        h2.section-title {
-            font-size: 15px;
+        h2 {
+            font-size: 14px;
             font-weight: 700;
             text-transform: uppercase;
             border-bottom: 1px solid #999;
-            padding-bottom: 4px;
-            margin: 22px 0 12px 0;
+            padding-bottom: 3px;
+            margin: 18px 0 8px 0;
+            break-after: avoid;
+            page-break-after: avoid;
         }
 
-        .summary {
-            font-size: 14px;
-            margin-top: 4px;
+        p.summary + p.summary {
+            margin-top: 6px;
         }
 
-        .job-item {
-            margin-bottom: 18px;
+        .job {
+            margin-bottom: 12px;
+        }
+
+        .job-head {
+            break-inside: avoid;
+            page-break-inside: avoid;
+            break-after: avoid;
+            page-break-after: avoid;
         }
 
         .job-role {
-            font-size: 14px;
             font-weight: 700;
-        }
-
-        .job-company {
-            font-size: 14px;
-            font-weight: 600;
         }
 
         .job-date {
             font-size: 13px;
-            font-style: italic;
-            margin-bottom: 6px;
+            color: #333;
+            margin-bottom: 4px;
         }
 
-        .job-desc ul {
+        ul {
             margin-left: 18px;
         }
 
-        .job-desc li {
-            margin-bottom: 5px;
+        li {
+            margin-bottom: 3px;
+            break-inside: avoid;
+            page-break-inside: avoid;
         }
 
-        .skill-group {
-            margin-bottom: 10px;
-        }
-
-        .skill-title {
-            font-weight: 700;
-            font-size: 13.5px;
-        }
-
-        .edu-item {
-            margin-bottom: 8px;
-        }
-
-        .edu-degree {
-            font-weight: 700;
-            display: block;
-        }
-
-        .edu-school {
-            display: block;
-            font-size: 13px;
+        .skills li {
+            margin-bottom: 2px;
         }
 
         .print-btn {
@@ -130,14 +121,51 @@
             background-color: #64748b;
         }
 
+        @page {
+            size: A4;
+            margin: 13mm 14mm;
+        }
+
         @media print {
             .no-print {
                 display: none !important;
             }
 
+            body {
+                font-size: 10.5pt;
+                line-height: 1.38;
+            }
+
             .container {
                 padding: 0;
-                margin: 20px;
+                margin: 0;
+                max-width: none;
+            }
+
+            h1 {
+                font-size: 18pt;
+            }
+
+            .role-title {
+                font-size: 11.5pt;
+            }
+
+            .contact,
+            .job-date {
+                font-size: 9.5pt;
+            }
+
+            h2 {
+                font-size: 10.5pt;
+                margin: 12px 0 6px 0;
+            }
+
+            .job {
+                margin-bottom: 8px;
+            }
+
+            li {
+                margin-bottom: 2px;
             }
         }
 
@@ -148,10 +176,20 @@
         body.lang-en .pt {
             display: none !important;
         }
+
+        .vaga {
+            display: none;
+        }
+
+        body.vaga-infra .vaga-infra,
+        body.vaga-redes .vaga-redes,
+        body.vaga-devops .vaga-devops {
+            display: inline;
+        }
     </style>
 </head>
 
-<body class="lang-pt">
+<body class="lang-pt vaga-infra">
 
     <button onclick="window.print()" class="print-btn no-print">Salvar PDF / Imprimir</button>
     <button id="lang-btn" class="print-btn lang-btn no-print" onclick="toggleLang()">EN</button>
@@ -160,471 +198,190 @@
         <header>
             <h1>Lucas Sigrist</h1>
             <div class="role-title">
-                <span class="pt">Engenheiro de Automação & Controle | DevSecOps & Cloud | Infra Híbrida | AI Integration | Automação & Observabilidade</span>
-                <span class="en">Automation & Control Engineer | DevSecOps & Cloud | Hybrid Infrastructure | AI Integration | Automation & Observability</span>
+                <span class="vaga vaga-infra"><span class="pt">Analista de Infraestrutura | Cloud, Redes e Segurança</span><span class="en">Infrastructure Analyst | Cloud, Networking &amp; Security</span></span>
+                <span class="vaga vaga-redes"><span class="pt">Analista de Redes e Segurança | Fortinet</span><span class="en">Network &amp; Security Analyst | Fortinet</span></span>
+                <span class="vaga vaga-devops"><span class="pt">Analista DevOps / Cloud | Terraform e CI/CD</span><span class="en">DevOps / Cloud Analyst | Terraform &amp; CI/CD</span></span>
             </div>
-            <div class="contact-bar">
-                <p>Americana – SP, Brasil</p>
-                <p>Email: <a href="mailto:sigrist@live.com">sigrist@live.com</a></p>
-                <p>Telefone/WhatsApp: (19) 99628-3457</p>
-                <p>LinkedIn: <a href="https://www.linkedin.com/in/lucassigrist/" target="_blank">linkedin.com/in/lucassigrist</a></p>
-                <p>GitHub: <a href="https://github.com/SigristLuc" target="_blank">github.com/SigristLuc</a></p>
-            </div>
+            <p class="contact">Americana – SP · (19) 99628-3457 · <a href="mailto:sigrist@live.com">sigrist@live.com</a></p>
+            <p class="contact"><a href="https://www.linkedin.com/in/lucassigrist/">linkedin.com/in/lucassigrist</a> · <a href="https://github.com/SigristLuc">github.com/SigristLuc</a> · <a href="https://sigristluc.github.io/lucas-sigrist/">sigristluc.github.io/lucas-sigrist</a></p>
         </header>
 
         <section>
-            <h2 class="section-title">
-                <span class="pt">Resumo</span>
-                <span class="en">Summary</span>
-            </h2>
-            <p class="summary pt">Engenheiro de Automação e Controle com mais de 8 anos em TI, atuando em Infraestrutura (cloud e on-premises), DevOps e Segurança de Rede em ambientes híbridos (AWS, Azure e VMware). Construí pipelines de CI/CD
-                do zero que reduziram releases de horas para minutos, migrei o acesso remoto para IPsec IKEv2 com
-                microsegmentação por identidade e desenvolvi observabilidade customizada para o monitoramento de
-                SD-WAN de uma rede varejista com mais de 400 filiais. Lidero modernização, infraestrutura como
-                código com Terraform e migração de legado, com foco em redução de risco operacional. Meu diferencial é integrar sistemas que não conversam entre si (equipamentos sem API, ferramentas de fabricantes diferentes, processos manuais) e transformá-los em ferramentas internas em produção, usando IA como acelerador de engenharia.</p>
-            <p class="summary en">Automation & Control Engineer with 8+ years in IT, working across Infrastructure (cloud and on-premises), DevOps, and Network Security in hybrid environments (AWS, Azure, and VMware). Built CI/CD pipelines from scratch
-                that cut releases from hours to minutes, migrated remote access to IPsec IKEv2 with identity-based
-                microsegmentation, and developed custom observability for Fortinet SD-WAN monitoring across a retail
-                network of 400+ sites. I lead modernization, infrastructure as code with Terraform, and legacy
-                migration, with a focus on reducing operational risk. My edge is integrating systems that don't talk to each other (devices with no API, multi-vendor tools, manual processes) and turning them into in-house tools running in production, using AI as an engineering accelerator.</p>
+            <h2><span class="pt">Resumo</span><span class="en">Summary</span></h2>
+            <p class="summary pt">Profissional de infraestrutura com atuação em TI desde 2016 e mais de 3 anos dedicados a infraestrutura
+                híbrida (AWS, Azure e VMware), redes e segurança Fortinet. Hoje atuo na infraestrutura de uma rede
+                varejista com mais de 400 filiais, cuidando de SD-WAN, VPN, logs centralizados, monitoramento e
+                ameaças externas.</p>
+            <p class="summary pt">Tenho experiência com infraestrutura como código (Terraform), pipelines de CI/CD, backup com Veeam e
+                Active Directory/Entra ID. Automatizo rotinas com Python, Shell e PowerShell e desenvolvo ferramentas
+                internas que reduzem trabalho manual e risco operacional.</p>
+            <p class="summary en">Infrastructure professional working in IT since 2016, with 3+ years focused on hybrid infrastructure
+                (AWS, Azure, and VMware), networking, and Fortinet security. I currently support the infrastructure of a
+                retail chain with 400+ branches, covering SD-WAN, VPN, centralized logging, monitoring, and external
+                threats.</p>
+            <p class="summary en">Experienced with infrastructure as code (Terraform), CI/CD pipelines, Veeam backup, and Active
+                Directory/Entra ID. I automate routine work with Python, Shell, and PowerShell and build internal tools
+                that reduce manual effort and operational risk.</p>
         </section>
 
         <section>
-            <h2 class="section-title">
-                <span class="pt">Experiência Profissional</span>
-                <span class="en">Work Experience</span>
-            </h2>
+            <h2><span class="pt">Competências técnicas</span><span class="en">Technical skills</span></h2>
+            <ul class="skills">
+                <li><strong><span class="pt">Cloud e virtualização:</span><span class="en">Cloud and virtualization:</span></strong> AWS, Azure, VMware vSphere/ESXi, Hyper-V, Docker</li>
+                <li><strong><span class="pt">Redes e segurança:</span><span class="en">Networking and security:</span></strong> FortiGate, FortiAnalyzer, FortiRecon, SD-WAN, VPN IPsec, Sophos, Cisco, Aruba, HP, VLANs, Zero Trust, <span class="pt">hardening</span><span class="en">hardening</span></li>
+                <li><strong><span class="pt">Sistemas:</span><span class="en">Systems:</span></strong> Linux (RHEL, Debian, Rocky), Windows Server, Active Directory, Entra ID, WSUS, Microsoft 365</li>
+                <li><strong><span class="pt">Automação e IaC:</span><span class="en">Automation and IaC:</span></strong> Terraform, GitHub Actions, Azure DevOps, Python, Shell, PowerShell</li>
+                <li><strong><span class="pt">Monitoramento e backup:</span><span class="en">Monitoring and backup:</span></strong> Datadog, SNMP, Syslog, Veeam Backup &amp; Replication</li>
+                <li><strong><span class="pt">Processos:</span><span class="en">Processes:</span></strong> ITIL, <span class="pt">gestão de mudanças</span><span class="en">change management</span>, Datto RMM, Autotask</li>
+                <li><strong><span class="pt">Em estudo:</span><span class="en">Currently learning:</span></strong> Kubernetes, Ansible</li>
+            </ul>
+        </section>
 
-            <div class="job-item">
-                <div class="job-role">
-                    <span class="pt">Analista de Infraestrutura / Cloud & DevOps</span>
-                    <span class="en">Infrastructure Analyst / Cloud & DevOps</span>
+        <section>
+            <h2><span class="pt">Experiência profissional</span><span class="en">Work experience</span></h2>
+
+            <div class="job">
+                <div class="job-head">
+                    <div class="job-role"><span class="pt">Analista de Infraestrutura</span><span class="en">Infrastructure Analyst</span> – MSDN Tecnologia</div>
+                    <div class="job-date"><span class="pt">Fev 2025 – atual</span><span class="en">Feb 2025 – present</span></div>
                 </div>
-                <div class="job-company">MSDN Tecnologia</div>
-                <div class="job-date">
-                    <span class="pt">Fev 2025 – Atual</span>
-                    <span class="en">Feb 2025 – Present</span>
-                </div>
-                <div class="job-desc">
-                    <ul>
-                        <li>
-                            <span class="pt"><strong>Observabilidade:</strong> Desenvolvi check customizado no
-                                Datadog (Python/API + SNMP) para monitorar a SD-WAN Fortinet de uma rede varejista
-                                com mais de 400 filiais, eliminando ponto cego de visibilidade de SLA/QoS e
-                                permitindo detectar degradação de link antes do impacto ao usuário.</span>
-                            <span class="en"><strong>Observability:</strong> Built a custom Datadog check
-                                (Python/API + SNMP) to monitor Fortinet SD-WAN across a retail network of 400+
-                                sites, eliminating a visibility blind spot for SLA/QoS metrics and enabling
-                                proactive detection of link degradation before user impact.</span>
-                        </li>
-                        <li>
-                            <span class="pt"><strong>Network Security:</strong> Migrei o acesso remoto de SSL VPN
-                                para IPsec IKEv2 (XAuth → EAP) e a autenticação de LDAP para Radius, implementando
-                                microsegmentação baseada em identidade e reduzindo a superfície de ataque.</span>
-                            <span class="en"><strong>Network Security:</strong> Migrated remote access from SSL VPN
-                                to IPsec IKEv2 (XAuth → EAP) and authentication from LDAP to Radius, implementing
-                                identity-based microsegmentation and reducing attack surface.</span>
-                        </li>
-                        <li>
-                            <span class="pt"><strong>Segurança Operacional:</strong> Centralizei no FortiAnalyzer os logs dos FortiGates das mais de 400 filiais, com relatórios, alertas e política de retenção para compliance, e conduzo a investigação de incidentes a partir dessa base.</span>
-                            <span class="en"><strong>Security Operations:</strong> Centralized FortiGate logs from 400+ branch sites in FortiAnalyzer, with reports, alerts, and a compliance-driven retention policy, and I lead incident investigations from that data.</span>
-                        </li>
-                        <li>
-                            <span class="pt"><strong>Threat Intelligence:</strong> Sou responsável pelo monitoramento de ameaças externas com FortiRecon (superfície de ataque exposta, vazamento de credenciais, dark web e uso indevido da marca) e pelo tratamento ponta a ponta do que é encontrado, da correção de exposições à execução de takedowns de conteúdo fraudulento.</span>
-                            <span class="en"><strong>Threat Intelligence:</strong> I own external threat monitoring with FortiRecon (exposed attack surface, credential leaks, dark web, and brand abuse) and end-to-end remediation of findings, from fixing exposures to executing takedowns of fraudulent content.</span>
-                        </li>
-                        <li>
-                            <span class="pt"><strong>Infraestrutura como Código:</strong> Implementei
-                                provisionamento de VMs com Terraform no VMware vSphere, com templates padronizados
-                                (Rocky Linux/Windows Server), state isolado por VM e interface self-service,
-                                substituindo a criação manual de máquinas; na AWS, levei recursos para GitOps com
-                                GitHub Actions (plan no PR, apply no merge) e autenticação OIDC, eliminando
-                                credenciais estáticas da pipeline.</span>
-                            <span class="en"><strong>Infrastructure as Code:</strong> Implemented VM provisioning
-                                with Terraform on VMware vSphere, using standardized templates (Rocky Linux/Windows
-                                Server), per-VM isolated state, and a self-service interface, replacing manual VM
-                                builds; on AWS, moved resources to a GitOps flow with GitHub Actions (plan on PR,
-                                apply on merge) and OIDC authentication, eliminating static credentials from the
-                                pipeline.</span>
-                        </li>
-                        <li>
-                            <span class="pt"><strong>Cloud Engineering:</strong> Arquitetei e sustentei workloads em
-                                AWS e Azure, garantindo escalabilidade e alta disponibilidade para aplicações
-                                críticas de clientes corporativos.</span>
-                            <span class="en"><strong>Cloud Engineering:</strong> Architected and maintained
-                                workloads on AWS and Azure, ensuring scalability and high availability for
-                                enterprise-critical applications.</span>
-                        </li>
-                        <li>
-                            <span class="pt"><strong>Containerização:</strong> Administrei ambientes Docker,
-                                padronizando o ciclo de vida de aplicações e eliminando conflitos de dependências
-                                entre serviços.</span>
-                            <span class="en"><strong>Containerization:</strong> Managed Docker environments,
-                                standardizing application lifecycle and eliminating inter-service dependency
-                                conflicts.</span>
-                        </li>
-                        <li>
-                            <span class="pt"><strong>Automação Linux:</strong> Automatizei rotinas operacionais em
-                                Shell, como a coleta agendada de logs PostgreSQL de múltiplos servidores de banco
-                                (rsync/SSH) com análise via pgBadger, dando visibilidade contínua de performance dos
-                                bancos, e o preparo padronizado de VMs Linux, incluindo transferência segura de
-                                arquivos em sessões de acesso remoto restrito.</span>
-                            <span class="en"><strong>Linux Automation:</strong> Automated operational routines in
-                                Shell, including scheduled PostgreSQL log collection from multiple database servers
-                                (rsync/SSH) with pgBadger analysis for continuous database performance visibility,
-                                and standardized Linux VM preparation, including secure file transfer for restricted
-                                remote-access sessions.</span>
-                        </li>
-                        <li>
-                            <span class="pt"><strong>Disaster Recovery:</strong> Gerenciei estratégia de backup
-                                imutável com Veeam Backup & Replication em ambientes VMware vSphere, garantindo
-                                RTO/RPO para workloads críticos.</span>
-                            <span class="en"><strong>Disaster Recovery:</strong> Managed immutable backup strategy
-                                with Veeam Backup & Replication on VMware vSphere, ensuring RTO/RPO compliance for
-                                critical workloads.</span>
-                        </li>
-                    </ul>
-                </div>
+                <ul>
+                    <li>
+                        <span class="pt">Criei monitoramento no Datadog (Python e SNMP) para a SD-WAN Fortinet de uma rede varejista com mais de 400 filiais, detectando degradação de link antes de afetar os usuários.</span>
+                        <span class="en">Built Datadog monitoring (Python and SNMP) for the Fortinet SD-WAN of a retail chain with 400+ branches, catching link degradation before it reached users.</span>
+                    </li>
+                    <li>
+                        <span class="pt">Centralizei no FortiAnalyzer os logs dos FortiGates de todas as filiais, com alertas, relatórios e retenção para compliance, e conduzo a investigação de incidentes a partir dessa base.</span>
+                        <span class="en">Centralized FortiGate logs from every branch in FortiAnalyzer, with alerts, reports, and compliance retention, and I lead incident investigations from that data.</span>
+                    </li>
+                    <li>
+                        <span class="pt">Monitoro ameaças externas com FortiRecon (credenciais vazadas, superfície exposta, uso indevido da marca) e trato cada caso até a correção ou o takedown.</span>
+                        <span class="en">Monitor external threats with FortiRecon (leaked credentials, exposed attack surface, brand abuse) and handle each case through remediation or takedown.</span>
+                    </li>
+                    <li>
+                        <span class="pt">Migrei o acesso remoto de SSL VPN para IPsec IKEv2 e a autenticação de LDAP para RADIUS, com acesso segmentado por identidade.</span>
+                        <span class="en">Migrated remote access from SSL VPN to IPsec IKEv2 and authentication from LDAP to RADIUS, with identity-based segmented access.</span>
+                    </li>
+                    <li>
+                        <span class="pt">Desenvolvi uma plataforma interna de monitoramento de rede e virtualização, em produção, que reúne em uma tela switches de cinco fabricantes, FortiGate, Wi-Fi e vCenter (6 hosts ESXi, 114 VMs) e reduz cerca de 68 mil eventos diários a cerca de 212 alertas úteis.</span>
+                        <span class="en">Developed an internal network and virtualization monitoring platform, now in production, that brings switches from five vendors, FortiGate, Wi-Fi, and vCenter (6 ESXi hosts, 114 VMs) into one screen and reduces about 68,000 daily events to about 212 actionable alerts.</span>
+                    </li>
+                    <li>
+                        <span class="pt">Automatizei a criação de VMs no VMware com Terraform e templates padronizados (Rocky Linux e Windows Server), substituindo o processo manual.</span>
+                        <span class="en">Automated VM provisioning on VMware with Terraform and standardized templates (Rocky Linux and Windows Server), replacing the manual process.</span>
+                    </li>
+                    <li>
+                        <span class="pt">Na AWS, passei a infraestrutura para GitHub Actions com autenticação OIDC, eliminando credenciais fixas na pipeline.</span>
+                        <span class="en">On AWS, moved infrastructure changes to GitHub Actions with OIDC authentication, removing static credentials from the pipeline.</span>
+                    </li>
+                    <li>
+                        <span class="pt">Gerencio backup imutável com Veeam em ambiente VMware, garantindo RTO e RPO dos sistemas críticos.</span>
+                        <span class="en">Manage immutable Veeam backups on VMware, meeting RTO and RPO for critical systems.</span>
+                    </li>
+                    <li>
+                        <span class="pt">Criei ferramentas internas em uso pela operação: backup automatizado dos FortiGates via API e um sistema de gestão de mudanças (ITIL) com aprovação por e-mail.</span>
+                        <span class="en">Built internal tools used by the operations team: automated FortiGate backups via API and an ITIL change management system with email approvals.</span>
+                    </li>
+                    <li>
+                        <span class="pt">Automatizei em Shell a coleta e análise de logs de PostgreSQL de vários servidores e o preparo padronizado de VMs Linux.</span>
+                        <span class="en">Automated PostgreSQL log collection and analysis across several servers, and standardized Linux VM setup, with Shell scripts.</span>
+                    </li>
+                </ul>
             </div>
 
-            <div class="job-item">
-                <div class="job-role">
-                    <span class="pt">Analista de Infraestrutura Pleno / DevOps</span>
-                    <span class="en">Mid-Level Infrastructure Analyst / DevOps</span>
+            <div class="job">
+                <div class="job-head">
+                    <div class="job-role"><span class="pt">Analista de Infraestrutura Pleno</span><span class="en">Mid-Level Infrastructure Analyst</span> – Spivit Global Technologies</div>
+                    <div class="job-date"><span class="pt">Jan 2023 – Fev 2025</span><span class="en">Jan 2023 – Feb 2025</span></div>
                 </div>
-                <div class="job-company">Spivit Global Technologies</div>
-                <div class="job-date">
-                    <span class="pt">Jan 2023 – Fev 2025</span>
-                    <span class="en">Jan 2023 – Feb 2025</span>
-                </div>
-                <div class="job-desc">
-                    <ul>
-                        <li>
-                            <span class="pt"><strong>CI/CD:</strong> Liderei a adoção de DevOps em um cliente
-                                Software House, estruturando pipelines de CI/CD do zero no Azure DevOps e
-                                substituindo o deploy manual via FTP por entrega automatizada em Azure Container
-                                Apps, o que reduziu o tempo de release de horas para minutos e devolveu horas
-                                semanais de trabalho à equipe de desenvolvimento.</span>
-                            <span class="en"><strong>CI/CD:</strong> Led DevOps adoption for a software house
-                                client, building CI/CD pipelines from scratch on Azure DevOps and replacing manual
-                                FTP deploys with automated delivery to Azure Container Apps, cutting release time
-                                from hours to minutes and giving the development team back hours of manual work each
-                                week.</span>
-                        </li>
-                        <li>
-                            <span class="pt"><strong>Gestão de Identidade:</strong> Centralizei identidade em Active
-                                Directory, Microsoft Entra ID e RBAC em ambiente híbrido, padronizando
-                                provisionamento de usuários e políticas de acesso condicional para reduzir risco de
-                                privilégios excessivos.</span>
-                            <span class="en"><strong>Identity Management:</strong> Centralized identity across
-                                Active Directory, Microsoft Entra ID, and RBAC in a hybrid environment, standardizing
-                                user provisioning and conditional access policies to mitigate over-privileged
-                                accounts.</span>
-                        </li>
-                        <li>
-                            <span class="pt"><strong>Infraestrutura de Rede:</strong> Projetei e configurei Switch
-                                Core (Cisco/Aruba), VLANs e segmentação de rede em ambiente corporativo distribuído,
-                                garantindo isolamento de tráfego e baseline de segurança na camada 2.</span>
-                            <span class="en"><strong>Network Infrastructure:</strong> Designed and configured Core
-                                Switches (Cisco/Aruba), VLANs, and network segmentation in a distributed enterprise
-                                environment, enforcing traffic isolation and Layer 2 security baseline.</span>
-                        </li>
-                        <li>
-                            <span class="pt"><strong>ITSM:</strong> Operei Datto RMM e Autotask para gestão remota
-                                de ativos, automação de processos e fluxos ITIL em ambiente MSP, reduzindo tempo de
-                                resposta a incidentes e aumentando rastreabilidade de chamados.</span>
-                            <span class="en"><strong>ITSM:</strong> Operated Datto RMM and Autotask for remote asset
-                                management, process automation, and ITIL workflows in an MSP environment, reducing
-                                incident response time and improving ticket traceability.</span>
-                        </li>
-                    </ul>
-                </div>
+                <ul>
+                    <li>
+                        <span class="pt">Estruturei do zero pipelines de CI/CD no Azure DevOps para um cliente, trocando deploy manual via FTP por entrega automatizada em Azure Container Apps; o tempo de release caiu de horas para minutos.</span>
+                        <span class="en">Built CI/CD pipelines from scratch on Azure DevOps for a client, replacing manual FTP deploys with automated delivery to Azure Container Apps; release time dropped from hours to minutes.</span>
+                    </li>
+                    <li>
+                        <span class="pt">Centralizei identidades em Active Directory e Entra ID, com RBAC e acesso condicional em ambiente híbrido.</span>
+                        <span class="en">Centralized identities in Active Directory and Entra ID, with RBAC and conditional access in a hybrid environment.</span>
+                    </li>
+                    <li>
+                        <span class="pt">Projetei e configurei switch core Cisco/Aruba, VLANs e segmentação de rede em ambiente corporativo distribuído.</span>
+                        <span class="en">Designed and configured Cisco/Aruba core switching, VLANs, and network segmentation in a distributed corporate environment.</span>
+                    </li>
+                    <li>
+                        <span class="pt">Atendi clientes de MSP com Datto RMM e Autotask seguindo fluxos ITIL, reduzindo o tempo de resposta a incidentes.</span>
+                        <span class="en">Supported MSP clients with Datto RMM and Autotask following ITIL workflows, reducing incident response time.</span>
+                    </li>
+                </ul>
             </div>
 
-            <div class="job-item">
-                <div class="job-role">
-                    <span class="pt">Analista de Informática Jr. / Infraestrutura</span>
-                    <span class="en">Junior IT Analyst / Infrastructure</span>
+            <div class="job">
+                <div class="job-head">
+                    <div class="job-role"><span class="pt">Analista de Informática Jr.</span><span class="en">Junior IT Analyst</span> – São Lucas Saúde S/A</div>
+                    <div class="job-date"><span class="pt">2016 – 2023 (projetos pontuais)</span><span class="en">2016 – 2023 (part-time projects)</span></div>
                 </div>
-                <div class="job-company">São Lucas Saúde S/A</div>
-                <div class="job-date">
-                    <span class="pt">2016 – 2023 (Projetos Intermitentes)</span>
-                    <span class="en">2016 – 2023 (Intermittent Projects)</span>
-                </div>
-                <div class="job-desc">
-                    <ul>
-                        <li>
-                            <span class="pt"><strong>Sustentação de Infra Hospitalar:</strong> Mantive servidores
-                                Windows/Linux, rotinas de backup e suporte N2 em ambiente 24/7 de saúde, contexto que
-                                exigiu tolerância a falhas e disciplina operacional.</span>
-                            <span class="en"><strong>Hospital Infrastructure Operations:</strong> Maintained
-                                Windows/Linux servers, backup routines, and L2 support in a 24/7 healthcare
-                                environment, demanding fault tolerance and operational discipline.</span>
-                        </li>
-                    </ul>
-                </div>
+                <ul>
+                    <li>
+                        <span class="pt">Mantive servidores Windows e Linux, rotinas de backup e suporte N2 em hospital com operação 24/7.</span>
+                        <span class="en">Maintained Windows and Linux servers, backup routines, and L2 support in a 24/7 hospital.</span>
+                    </li>
+                </ul>
             </div>
         </section>
 
         <section>
-            <h2 class="section-title">
-                <span class="pt">Integração de Sistemas & Ferramentas Próprias</span>
-                <span class="en">Systems Integration & In-House Tools</span>
-            </h2>
-
-            <div class="job-item">
-
-                <div class="job-header">
-
-                    <div class="job-role">
-                        <span class="pt">Plataforma de Observabilidade de Rede e Virtualização</span>
-                        <span class="en">Network & Virtualization Observability Platform</span>
-                    </div>
-
-                    <div class="job-company">
-                        <span class="pt">Em produção · Python, FastAPI, PostgreSQL/TimescaleDB, Next.js, Docker</span>
-                        <span class="en">In production · Python, FastAPI, PostgreSQL/TimescaleDB, Next.js, Docker</span>
-                    </div>
-
-                    <div class="job-date">
-                        <span class="pt">Jul 2026 – Atual (evolução contínua)</span>
-                        <span class="en">Jul 2026 – Present (ongoing)</span>
-                    </div>
-
-                </div>
-
-                <div class="job-desc">
-                    <ul>
-
-                        <li>
-                            <span class="pt"><strong>Integração:</strong> Plataforma própria, criada do zero, que reúne em uma tela o que ficava em consoles separados: switches de cinco fabricantes, inclusive sem API, FortiGate via SNMP e API REST (VPN, SLA de SD-WAN com nota de voz MOS, usuários FSSO), Wi-Fi UniFi e logs do FortiAnalyzer. Só no site principal: 1.500+ portas e picos de 72 Gbps.</span>
-                            <span class="en"><strong>Integration:</strong> In-house platform built from scratch that brings into one pane what lived in separate consoles: switches from five vendors, including ones with no API, FortiGate via SNMP and REST API (VPN, SD-WAN SLA with MOS voice score, FSSO users), UniFi Wi-Fi, and FortiAnalyzer logs. Main site alone: 1,500+ ports and 72 Gbps peaks.</span>
-                        </li>
-
-                        <li>
-                            <span class="pt"><strong>Operação:</strong> Topologia LLDP, VLAN por porta, rastreio de Wi-Fi por dispositivo, tempo real via WebSocket e relatório executivo semanal. O freio no motor de alertas agrupa eventos repetidos: de ~68 mil registros/dia, só ~212 viram notificação no Telegram.</span>
-                            <span class="en"><strong>Operations:</strong> LLDP topology, per-port VLANs, per-device Wi-Fi tracking, real-time WebSocket updates, and a weekly executive report. An alert-engine throttle collapses repeated events: of ~68K records/day, only ~212 become Telegram notifications.</span>
-                        </li>
-
-                        <li>
-                            <span class="pt"><strong>Virtualização:</strong> Dashboard NOC do vCenter (pyVmomi, somente leitura), em transição para módulo da plataforma: 6 hosts ESXi, 114 VMs e ~110 TiB, com reserva N+1, previsão de esgotamento de datastore por regressão linear, simulador de manutenção, CPU Ready por VM e hardening com alerta de VMSA explorada.</span>
-                            <span class="en"><strong>Virtualization:</strong> vCenter NOC dashboard (pyVmomi, read-only), now becoming a platform module: 6 ESXi hosts, 114 VMs, and ~110 TiB, with N+1 headroom, datastore exhaustion forecasting via linear regression, a maintenance simulator, per-VM CPU Ready, and hardening checks flagging exploited VMSAs.</span>
-                        </li>
-
-                        <li>
-                            <span class="pt"><strong>Entrega:</strong> 260+ commits, CI no GitHub Actions (pytest, Vitest, type-check, build) e deploy automático a cada push na main.</span>
-                            <span class="en"><strong>Delivery:</strong> 260+ commits, GitHub Actions CI (pytest, Vitest, type-check, build), and automatic deployment on every push to main.</span>
-                        </li>
-
-                    </ul>
-                </div>
-            </div>
-
-            <div class="job-item">
-
-                <div class="job-header">
-
-                    <div class="job-role">
-                        <span class="pt">Terminal de Operações com IA (macOS)</span>
-                        <span class="en">AI-Powered Operations Terminal (macOS)</span>
-                    </div>
-
-                    <div class="job-company">
-                        <span class="pt">Projeto pessoal em desenvolvimento · Swift/SwiftUI, Claude e OpenAI</span>
-                        <span class="en">Personal project in development · Swift/SwiftUI, Claude & OpenAI</span>
-                    </div>
-
-                    <div class="job-date">
-                        <span class="pt">Out 2026 – Atual</span>
-                        <span class="en">Oct 2026 – Present</span>
-                    </div>
-
-                </div>
-
-                <div class="job-desc">
-                    <ul>
-
-                        <li>
-                            <span class="pt"><strong>Copiloto:</strong> Terminal nativo com copiloto de IA que gera, explica e executa comandos (Linux, FortiOS, PowerShell, AWS/Azure/GCP, kubectl, Terraform), com runbooks e execução em lote em vários hosts com comparação das saídas.</span>
-                            <span class="en"><strong>Copilot:</strong> Native terminal with an AI copilot that generates, explains, and runs commands (Linux, FortiOS, PowerShell, AWS/Azure/GCP, kubectl, Terraform), with runbooks and multi-host batch execution with output comparison.</span>
-                        </li>
-
-                        <li>
-                            <span class="pt"><strong>Segurança da IA:</strong> A IA propõe e um motor de políticas decide: risco por tecnologia e ambiente, aprovação com Touch ID, segredos mascarados antes de chegar ao modelo e auditoria encadeada com HMAC-SHA256.</span>
-                            <span class="en"><strong>AI Guardrails:</strong> The AI proposes and a policy engine decides: risk by technology and environment, Touch ID approval, secrets redacted before reaching the model, and an HMAC-SHA256 chained audit trail.</span>
-                        </li>
-
-                    </ul>
-                </div>
-            </div>
-
-            <div class="job-item">
-
-                <div class="job-header">
-
-                    <div class="job-role">
-                        <span class="pt">Outras Ferramentas em Produção</span>
-                        <span class="en">Other Tools in Production</span>
-                    </div>
-
-                </div>
-
-                <div class="job-desc">
-                    <ul>
-
-                        <li>
-                            <span class="pt"><strong>Inventário de Serviços:</strong> Sete fontes sem integração nativa (Cloudflare, Nginx Proxy Manager, MikroTik, DNS interno, IIS e outras) em um inventário único de APIs publicadas, com coletores somente leitura e cofre cifrado.</span>
-                            <span class="en"><strong>Service Inventory:</strong> Seven sources with no native integration (Cloudflare, Nginx Proxy Manager, MikroTik, internal DNS, IIS, and others) in a single inventory of published APIs, with read-only collectors and an encrypted vault.</span>
-                        </li>
-
-                        <li>
-                            <span class="pt"><strong>Gestão de Mudanças (ITIL):</strong> GMUD com aprovação por e-mail (internos e externos) e execução por checklist que registra quem fez cada etapa (NestJS, Next.js, Redis/BullMQ).</span>
-                            <span class="en"><strong>Change Management (ITIL):</strong> Change management with email approval (internal and external) and checklist execution that records who did each step (NestJS, Next.js, Redis/BullMQ).</span>
-                        </li>
-
-                        <li>
-                            <span class="pt"><strong>Backup de Firewalls:</strong> Backup agendado dos FortiGates via API REST, com event logs, health check (HA, licenças) e aviso por e-mail.</span>
-                            <span class="en"><strong>Firewall Backup:</strong> Scheduled FortiGate backups via REST API, with event logs, health checks (HA, licensing), and email alerts.</span>
-                        </li>
-
-                        <li>
-                            <span class="pt"><strong>IA Aplicada:</strong> IA generativa como acelerador de engenharia, sempre com plano, testes e CI, e agentes próprios que ligam a IA aos processos internos, como o cadastro de projetos no sistema de gestão.</span>
-                            <span class="en"><strong>Applied AI:</strong> Generative AI as an engineering accelerator, always backed by plans, tests, and CI, plus custom agents that connect AI to internal processes, such as registering projects in the management system.</span>
-                        </li>
-
-                    </ul>
-                </div>
-            </div>
+            <h2><span class="pt">Formação</span><span class="en">Education</span></h2>
+            <ul>
+                <li><span class="pt">Bacharelado em Engenharia de Automação e Controle – Unisal Americana</span><span class="en">B.Sc. in Automation and Control Engineering – Unisal Americana</span></li>
+                <li><span class="pt">Técnico em Redes e Linux – Senac / ETEA</span><span class="en">Network and Linux Technician – Senac / ETEA</span></li>
+            </ul>
         </section>
 
         <section>
-            <h2 class="section-title">
-                <span class="pt">Competências Técnicas</span>
-                <span class="en">Technical Skills</span>
-            </h2>
-
-            <div class="skill-group">
-                <div class="skill-title">Cloud & DevOps Tools</div>
-                <p>AWS, Azure, Terraform, Docker, CI/CD Pipelines, GitHub Actions, Azure DevOps, Datadog, Git,
-                    GitHub, Microsoft 365</p>
-            </div>
-
-            <div class="skill-group">
-                <div class="skill-title">
-                    <span class="pt">Segurança & Rede</span>
-                    <span class="en">Security & Network</span>
-                </div>
-                <p>FortiGate, FortiAnalyzer, FortiRecon, SD-WAN, Sophos, VPN (IPsec IKEv2, SSL), Zero Trust, Hardening, Cisco Switching, HP
-                    Switching, Aruba, Veeam Backup</p>
-            </div>
-
-            <div class="skill-group">
-                <div class="skill-title">
-                    <span class="pt">Automação & Sistemas Operacionais</span>
-                    <span class="en">Automation & Operating Systems</span>
-                </div>
-                <p>Python, Shell, PowerShell, Windows Server, WSUS, Microsoft Hyper-V, Linux (RHEL/Debian), Active
-                    Directory</p>
-            </div>
-
-            <div class="skill-group">
-                <div class="skill-title">
-                    <span class="pt">Integração & Ferramentas</span>
-                    <span class="en">Integration & Tooling</span>
-                </div>
-                <p>Platform Engineering, <span class="pt">IA Aplicada</span><span class="en">Applied AI</span>, FastAPI, Next.js, NestJS, PostgreSQL / TimescaleDB,
-                    SNMP / Syslog, REST APIs</p>
-            </div>
-
-            <div class="skill-group">
-                <div class="skill-title">
-                    <span class="pt">Em estudo</span>
-                    <span class="en">Currently learning</span>
-                </div>
-                <p>Kubernetes, Ansible</p>
-            </div>
+            <h2><span class="pt">Certificações</span><span class="en">Certifications</span></h2>
+            <ul>
+                <li><span class="pt">DevOps Professional – LinuxTips (em andamento, 2026)</span><span class="en">DevOps Professional – LinuxTips (in progress, 2026)</span></li>
+            </ul>
         </section>
 
         <section>
-            <h2 class="section-title">
-                <span class="pt">Formação</span>
-                <span class="en">Education</span>
-            </h2>
-            <div class="edu-item">
-                <span class="edu-degree">
-                    <span class="pt">Engenharia de Automação e Controle</span>
-                    <span class="en">Automation & Control Engineering</span>
-                </span>
-                <span class="edu-school">
-                    <span class="pt">Bacharelado Completo</span>
-                    <span class="en">Bachelor's Degree</span>
-                </span>
-                <span class="edu-school">Unisal Americana</span>
-            </div>
-            <div class="edu-item">
-                <span class="edu-degree">
-                    <span class="pt">Técnico em Redes & Linux</span>
-                    <span class="en">Network & Linux Technician</span>
-                </span>
-                <span class="edu-school">Senac / ETEA</span>
-            </div>
-            <div class="edu-item">
-                <span class="edu-degree">
-                    <span class="pt">DevOps Professional</span>
-                    <span class="en">DevOps Professional Certification</span>
-                </span>
-                <span class="edu-school">LinuxTips</span>
-                <span class="edu-school">
-                    <span class="pt">Em andamento, 2026</span>
-                    <span class="en">In progress, 2026</span>
-                </span>
-            </div>
-        </section>
-
-        <section>
-            <h2 class="section-title">
-                <span class="pt">Idiomas</span>
-                <span class="en">Languages</span>
-            </h2>
-            <div class="edu-item">
-                <span class="edu-degree">
-                    <span class="pt">Português</span>
-                    <span class="en">Portuguese</span>
-                </span>
-                <span class="edu-school">
-                    <span class="pt">Nativo</span>
-                    <span class="en">Native</span>
-                </span>
-            </div>
-            <div class="edu-item">
-                <span class="edu-degree">
-                    <span class="pt">Inglês</span>
-                    <span class="en">English</span>
-                </span>
-                <span class="edu-school">
-                    <span class="pt">Técnico (Leitura Avançada)</span>
-                    <span class="en">Technical (Advanced Reading)</span>
-                </span>
-            </div>
+            <h2><span class="pt">Idiomas</span><span class="en">Languages</span></h2>
+            <p><span class="pt">Português: nativo · Inglês: técnico (leitura avançada)</span><span class="en">Portuguese: native · English: technical (advanced reading)</span></p>
         </section>
     </div>
 
     <script>
-        function toggleLang() {
-            const body = document.body;
-            const btn = document.getElementById('lang-btn');
-            if (body.classList.contains('lang-en')) {
-                body.classList.remove('lang-en');
-                body.classList.add('lang-pt');
-                btn.textContent = 'EN';
-                document.documentElement.lang = 'pt-BR';
-            } else {
-                body.classList.remove('lang-pt');
-                body.classList.add('lang-en');
-                btn.textContent = 'PT';
-                document.documentElement.lang = 'en';
-            }
+        var TITULOS = {
+            infra: { pt: 'Analista de Infraestrutura', en: 'Infrastructure Analyst' },
+            redes: { pt: 'Analista de Redes e Segurança', en: 'Network & Security Analyst' },
+            devops: { pt: 'Analista DevOps - Cloud', en: 'DevOps - Cloud Analyst' }
+        };
+
+        function vagaAtual() {
+            var v = new URLSearchParams(window.location.search).get('vaga');
+            return TITULOS[v] ? v : 'infra';
         }
+
+        function aplicar(lang) {
+            var body = document.body;
+            body.classList.remove('lang-pt', 'lang-en', 'vaga-infra', 'vaga-redes', 'vaga-devops');
+            body.classList.add('lang-' + lang, 'vaga-' + vagaAtual());
+            document.documentElement.lang = (lang === 'pt') ? 'pt-BR' : 'en';
+            document.getElementById('lang-btn').textContent = (lang === 'pt') ? 'EN' : 'PT';
+            // O título vira o nome sugerido do arquivo ao salvar o PDF
+            document.title = 'Lucas Sigrist - ' + TITULOS[vagaAtual()][lang];
+            try { localStorage.setItem('cv-lang', lang); } catch (e) { }
+        }
+
+        function toggleLang() {
+            aplicar(document.body.classList.contains('lang-en') ? 'pt' : 'en');
+        }
+
+        (function () {
+            var urlLang = new URLSearchParams(window.location.search).get('lang');
+            var saved = 'pt';
+            try { saved = localStorage.getItem('cv-lang') || 'pt'; } catch (e) { }
+            aplicar((urlLang === 'en' || urlLang === 'pt') ? urlLang : saved);
+        })();
     </script>
 </body>
 
